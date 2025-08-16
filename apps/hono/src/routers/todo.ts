@@ -1,7 +1,7 @@
 import z from "zod";
 import { router, publicProcedure, protectedProcedure } from "@/lib/trpc";
 import { todo } from "@/db/schema/todo";
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import { db } from "@/db";
 
 export const todoRouter = router({
@@ -24,18 +24,19 @@ export const todoRouter = router({
 
   toggle: protectedProcedure
     .input(z.object({
+      id: z.number(),
       completed: z.boolean()
     }))
     .mutation(async ({ ctx, input }) => {
-      const [updatedTodo] = await db.update(todo).set({ completed: input.completed}).where(eq(todo.userId, ctx.session.user.id)).returning();
+      const [updatedTodo] = await db.update(todo).set({ completed: input.completed}).where(and(eq(todo.userId, ctx.session.user.id), eq(todo.id, input.id))).returning();
       return updatedTodo;
     }),
   
   delete: protectedProcedure
     .input(z.object({ id: z.number() }))
-    .mutation(async ({ ctx }) => {
-      await db.delete(todo).where(eq(todo.userId, ctx.session.user.id));
-      return { sucess: true };
+    .mutation(async ({ ctx, input }) => {
+      await db.delete(todo).where(and(eq(todo.userId, ctx.session.user.id), eq(todo.id, input.id)));
+      return { success: true };
     }),
     
 })
