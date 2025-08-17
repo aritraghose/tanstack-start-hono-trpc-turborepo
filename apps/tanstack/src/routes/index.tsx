@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useQuery } from "@tanstack/react-query";
 import { useTRPC } from "../utils/trpc";
+import { Button } from "@workspace/ui/components/button"
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -29,6 +30,9 @@ function Home() {
               </span>
             </div>
         </section>
+      </div>
+      <div>
+        <Button variant="secondary"> Hi </Button>
       </div>
     </div>
   );
