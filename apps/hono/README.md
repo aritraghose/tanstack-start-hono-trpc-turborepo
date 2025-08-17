@@ -1,21 +1,43 @@
-```txt
-npm install
-npm run dev
+# Hono Backend
+
+This is the Hono.js primary backend application for the monorepo, running on Cloudflare Workers.
+
+## Getting Started
+
+To start the development server, run:
+
+```bash
+pnpm dev
 ```
 
-```txt
-npm run deploy
-```
+The app will be available at [http://localhost:3001](http://localhost:3001).
 
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
+## Database
 
-```txt
-npm run cf-typegen
-```
+The database schema is defined in `src/db/schema`.
 
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
+-   **Push schema changes to the database:**
 
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
+    ```bash
+    pnpm db:push
+    ```
+
+-   **Generate database migrations:**
+
+    ```bash
+    pnpm db:generate
+    ```
+
+-   **Apply migrations:**
+
+    ```bash
+    pnpm db:migrate
+    ```
+
+## Deployment
+
+To deploy the application on Cloudflare Workers, run:
+
+```bash
+pnpm deploy
 ```

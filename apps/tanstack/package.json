@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite dev --port=3000",
     "build": "vite build && tsc --noEmit",
-    "start": "vite start"
+    "start": "vite start",
+    "deploy": "pnpm run build && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface Env"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",

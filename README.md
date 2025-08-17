@@ -1,31 +1,22 @@
-# shadcn/ui monorepo template
+# Full-Stack Monorepo with Turborepo, Hono.js, TanStack Start, tRPC - Deployable to Cloudflare Workers
 
-This template is for creating a monorepo with shadcn/ui.
 
-## Usage
+## Technologies Used
 
-```bash
-pnpm dlx shadcn@latest init
-```
 
-## Adding components
+- **Turborepo** - Monorepo management
+- **Tanstack Start** - Frontend Framework
+- **Next.js** - Frontend Framework
+- **Hono.js** - Primary Backend
+- **tRPC** - Typesafety across the monorepo
+- **Drizzle** - ORM
+- **Neon** - Serverless Postgres
+- **Cloudflare Workers** - Deployment option for both Hono and Tanstack Start app
+- **Better-Auth** - Authentication
+- **TailwindCSS** - Styling
+- **Shadcn** - Component Library
 
-To add components to your app, run the following command at the root of your `web` app:
 
-```bash
-pnpm dlx shadcn@latest add button -c apps/web
-```
+### Todo
+- [ ] Add Better-Auth in the Client side Tanstack Start app
 
-This will place the ui components in the `packages/ui/src/components` directory.
-
-## Tailwind
-
-Your `tailwind.config.ts` and `globals.css` are already set up to use the components from the `ui` package.
-
-## Using components
-
-To use the components in your app, import them from the `ui` package.
-
-```tsx
-import { Button } from "@workspace/ui/components/button"
-```

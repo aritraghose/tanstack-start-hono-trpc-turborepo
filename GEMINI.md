@@ -6,6 +6,7 @@ This is a monorepo for a full-stack application, built with [Turborepo](https://
 
 *   `apps/web`: A [Next.js](https://nextjs.org/) frontend application with [React](https://reactjs.org/) and [shadcn/ui](https://ui.shadcn.com/).
 *   `apps/hono`: A [Hono.js](https://hono.dev/) backend application running on Cloudflare Workers.
+*   `apps/tanstack`: A [TanStack](https://tanstack.com/) application with [React Query](https://tanstack.com/query/latest) and [React Router](https://tanstack.com/router/latest).
 *   `packages/ui`: A shared UI component library using [shadcn/ui](https://ui.shadcn.com/).
 *   `packages/eslint-config`: Shared ESLint configuration.
 *   `packages/typescript-config`: Shared TypeScript configuration.
@@ -27,14 +28,15 @@ pnpm install
 
 ### Development
 
-To start the development servers for both the web and hono apps, run the following command from the root of the project:
+To start the development servers for all apps, run the following command from the root of the project:
 
 ```bash
 pnpm dev
 ```
 
-*   The Next.js app will be available at [http://localhost:3000](http://localhost:3000).
+*   The Tanstack app will be available at [http://localhost:3000](http://localhost:3000).
 *   The Hono app will be available at [http://localhost:3001](http://localhost:3001).
+*   The Next.js app will be available at [http://localhost:3002](http://localhost:3002).
 
 ### Build
 
