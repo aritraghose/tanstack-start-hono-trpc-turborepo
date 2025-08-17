@@ -1,8 +1,8 @@
 import z from "zod";
-import { router, publicProcedure, protectedProcedure } from "@/lib/trpc";
-import { todo } from "@/db/schema/todo";
+import { router, publicProcedure, protectedProcedure } from "../lib/trpc";
+import { todo } from "../db/schema/todo";
 import { eq, and } from "drizzle-orm";
-import { db } from "@/db";
+import { db } from "../db";
 
 export const todoRouter = router({
   getAll: protectedProcedure.query(async ({ ctx }) => {
