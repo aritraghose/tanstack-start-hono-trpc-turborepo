@@ -14,8 +14,8 @@ import type { QueryClient } from '@tanstack/react-query'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 // import appCss from '~/styles/app.css?url'
-// import appCss from '@workspace/ui/globals.css?url'
-import '@workspace/ui/globals.css'
+import appCss from '@workspace/ui/globals.css?url'
+// import '@workspace/ui/globals.css'
 
 import { seo } from '~/utils/seo'
 import type { AppRouter } from "../../../hono/src/routers";
@@ -43,7 +43,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
       }),
     ],
     links: [
-      // { rel: 'stylesheet', href: appCss },
+      { rel: 'stylesheet', href: appCss },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',

@@ -32,7 +32,7 @@ function Home() {
         </section>
       </div>
       <div>
-        <Button variant="secondary"> Hi </Button>
+        <Button> Hi </Button>
       </div>
     </div>
   );
