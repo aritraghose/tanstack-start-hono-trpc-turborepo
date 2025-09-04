@@ -1,4 +1,5 @@
-import { createTRPCContext } from '@trpc/tanstack-react-query';
+import { createTRPCContext } from "@trpc/tanstack-react-query";
 import type { AppRouter } from "../../../hono/src/routers";
- 
-export const { TRPCProvider, useTRPC, useTRPCClient } = createTRPCContext<AppRouter>();
+
+export const { TRPCProvider, useTRPC, useTRPCClient } =
+	createTRPCContext<AppRouter>();

@@ -1,43 +1,45 @@
 {
-  "name": "tanstack-start-example-basic-react-query",
-  "private": true,
-  "sideEffects": false,
-  "type": "module",
-  "scripts": {
-    "dev": "vite dev --port=3000",
-    "build": "vite build && tsc --noEmit",
-    "start": "vite start",
-    "deploy": "pnpm run build && wrangler deploy",
-    "cf-typegen": "wrangler types --env-interface Env"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.12",
-    "@tanstack/react-query": "^5.85.3",
-    "@tanstack/react-query-devtools": "^5.66.0",
-    "@tanstack/react-router": "^1.131.16",
-    "@tanstack/react-router-devtools": "^1.131.16",
-    "@tanstack/react-router-ssr-query": "^1.131.16",
-    "@tanstack/react-start": "^1.131.16",
-    "@trpc/client": "^11.4.4",
-    "@trpc/server": "^11.4.4",
-    "@trpc/tanstack-react-query": "^11.4.4",
-    "@workspace/ui": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "redaxios": "^0.5.1",
-    "sonner": "^2.0.7",
-    "tailwind-merge": "^2.6.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.12",
-    "@types/node": "^22.5.4",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@workspace/typescript-config": "workspace:*",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^4.1.12",
-    "typescript": "^5.7.2",
-    "vite": "^6.3.5",
-    "vite-tsconfig-paths": "^5.1.4"
-  }
+	"name": "tanstack-start-example-basic-react-query",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev --port=3000",
+		"build": "vite build && tsc --noEmit",
+		"start": "vite start",
+		"deploy": "pnpm run build && wrangler deploy",
+		"cf-typegen": "wrangler types --env-interface Env",
+		"format-and-lint": "pnpm -w exec biome check .",
+		"format-and-lint:fix": "pnpm -w exec biome check . --write --verbose"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.12",
+		"@tanstack/react-query": "^5.85.3",
+		"@tanstack/react-query-devtools": "^5.66.0",
+		"@tanstack/react-router": "^1.131.16",
+		"@tanstack/react-router-devtools": "^1.131.16",
+		"@tanstack/react-router-ssr-query": "^1.131.16",
+		"@tanstack/react-start": "^1.131.16",
+		"@trpc/client": "^11.4.4",
+		"@trpc/server": "^11.4.4",
+		"@trpc/tanstack-react-query": "^11.4.4",
+		"@workspace/ui": "workspace:*",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"redaxios": "^0.5.1",
+		"sonner": "^2.0.7",
+		"tailwind-merge": "^2.6.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.12",
+		"@types/node": "^22.5.4",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
+		"@workspace/typescript-config": "workspace:*",
+		"postcss": "^8.5.1",
+		"tailwindcss": "^4.1.12",
+		"typescript": "^5.7.2",
+		"vite": "^6.3.5",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
 }
